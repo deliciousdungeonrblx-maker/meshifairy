@@ -1,0 +1,37 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "meshifairy"
+version = "0.1.0"
+displayName = "Meshi Fairy"
+description = "fairies that work like transponder snails, talk to other players through simple voice chat. addon for DiM."
+
+[[dependencies.meshifairy]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.meshifairy]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.meshifairy]]
+modId = "geckolib"
+type = "required"
+versionRange = "[4.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.meshifairy]]
+modId = "voicechat"
+type = "required"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
