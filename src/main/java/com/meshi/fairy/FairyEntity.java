@@ -21,7 +21,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.Mob;
@@ -38,7 +37,7 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.manager.AnimatableManager;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.animation.PlayState;
@@ -268,13 +267,14 @@ public class FairyEntity extends PathfinderMob implements GeoEntity {
 
     // ---- misc overrides ----
 
+    // setRemoved is final, this neoforge hook runs on every removal (poof, unload, kill)
     @Override
-    public void setRemoved(Entity.RemovalReason reason) {
+    public void onRemovedFromLevel() {
         if (!level().isClientSide) {
             clearLight();
             FairyManager.unregister(this);
         }
-        super.setRemoved(reason);
+        super.onRemovedFromLevel();
     }
 
     @Override public boolean shouldBeSaved() { return false; }
