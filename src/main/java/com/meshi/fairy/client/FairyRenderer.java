@@ -11,7 +11,7 @@ public class FairyRenderer extends GeoEntityRenderer<FairyEntity> {
     public FairyRenderer(EntityRendererProvider.Context ctx) {
         super(ctx, new FairyModel());
         this.shadowRadius = 0f;
-        withScale(0.15f); // model is 2.1 blocks tall, this makes it ~0.32
+        withScale(0.24f); // model is 2.1 blocks tall, this makes it ~0.5 (a player head)
     }
 
     // wings have semi transparent pixels

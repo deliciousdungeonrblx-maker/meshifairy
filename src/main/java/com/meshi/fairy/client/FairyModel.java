@@ -12,7 +12,7 @@ public class FairyModel extends GeoModel<FairyEntity> {
     private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(MeshiFairy.MODID, "textures/entity/fairy.png");
 
     @Override public ResourceLocation getModelResource(FairyEntity e) { return GEO; }
-    @Override public ResourceLocation getTextureResource(FairyEntity e) { return TEX; }
+    @Override public ResourceLocation getTextureResource(FairyEntity e) { return SkinFairyTextures.textureFor(e, TEX); }
     @Override public ResourceLocation getAnimationResource(FairyEntity e) { return ANIM; }
 
     // busy shake is done here on the Head bone so the animation json stays untouched

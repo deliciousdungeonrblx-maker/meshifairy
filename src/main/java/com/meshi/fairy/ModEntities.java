@@ -12,8 +12,16 @@ public class ModEntities {
 
     public static final DeferredHolder<EntityType<?>, EntityType<FairyEntity>> FAIRY =
             ENTITIES.register("fairy", () -> EntityType.Builder.of(FairyEntity::new, MobCategory.MISC)
-                    .sized(0.3f, 0.35f)
+                    .sized(0.4f, 0.5f)
                     .clientTrackingRange(8)
                     .updateInterval(2)
                     .build("fairy"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FairyBlobEntity>> FAIRY_BLOB =
+            ENTITIES.register("fairy_blob", () -> EntityType.Builder.of(FairyBlobEntity::new, MobCategory.MISC)
+                    .sized(0.45f, 0.5f)
+                    .clientTrackingRange(8)
+                    .updateInterval(10)
+                    .fireImmune()
+                    .build("fairy_blob"));
 }

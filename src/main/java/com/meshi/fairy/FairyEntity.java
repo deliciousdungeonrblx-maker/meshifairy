@@ -59,6 +59,10 @@ public class FairyEntity extends PathfinderMob implements GeoEntity {
     private static final EntityDataAccessor<Boolean> BUSY =
             SynchedEntityData.defineId(FairyEntity.class, EntityDataSerializers.BOOLEAN);
 
+    // manual skin color override (0xRRGGBB), -1 = pick it from the owner's skin
+    private static final EntityDataAccessor<Integer> SKIN_COLOR =
+            SynchedEntityData.defineId(FairyEntity.class, EntityDataSerializers.INT);
+
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private int life = BASE_LIFE;
     private int busyTicks;
@@ -84,6 +88,7 @@ public class FairyEntity extends PathfinderMob implements GeoEntity {
         b.define(OWNER, Optional.empty());
         b.define(ANIM, 0);
         b.define(BUSY, false);
+        b.define(SKIN_COLOR, -1);
     }
 
     // ---- owner / state ----
@@ -91,6 +96,8 @@ public class FairyEntity extends PathfinderMob implements GeoEntity {
     public UUID getOwnerId() { return entityData.get(OWNER).orElse(null); }
     public void setOwner(UUID id) { entityData.set(OWNER, Optional.ofNullable(id)); }
     public boolean isOwner(Player p) { return p.getUUID().equals(getOwnerId()); }
+    public int getSkinColor() { return entityData.get(SKIN_COLOR); }
+    public void setSkinColor(int rgb) { entityData.set(SKIN_COLOR, rgb); }
     public boolean isBusy() { return entityData.get(BUSY); }
     public void markVoice() { lastVoiceMs = System.currentTimeMillis(); }
 

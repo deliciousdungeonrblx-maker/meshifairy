@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:fern" },
+    { "item": "minecraft:sweet_berries" },
+    { "item": "minecraft:dandelion" },
+    { "item": "minecraft:slime_ball" }
+  ],
+  "result": { "id": "meshifairy:fairy_mash", "count": 1 }
+}

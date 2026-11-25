@@ -15,6 +15,7 @@ public class ClientEvents {
     @SubscribeEvent
     public static void renderers(EntityRenderersEvent.RegisterRenderers e) {
         e.registerEntityRenderer(ModEntities.FAIRY.get(), FairyRenderer::new);
+        e.registerEntityRenderer(ModEntities.FAIRY_BLOB.get(), FairyBlobRenderer::new);
     }
 
     @SubscribeEvent

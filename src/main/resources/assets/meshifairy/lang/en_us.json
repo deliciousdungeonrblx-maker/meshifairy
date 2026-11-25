@@ -1,3 +1,6 @@
 {
-  "entity.meshifairy.fairy": "Fairy"
+  "entity.meshifairy.fairy": "Fairy",
+  "entity.meshifairy.fairy_blob": "Fairy Blob",
+  "item.meshifairy.fairy_mash": "Fairy Mash",
+  "item.meshifairy.fairy_flask": "Fairy Flask"
 }
